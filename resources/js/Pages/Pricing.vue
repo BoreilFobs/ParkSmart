@@ -287,10 +287,10 @@ import {
     CheckIcon,
     ClockIcon,
     CreditCardIcon,
-    DeviceMobileIcon,
-    CashIcon,
-    ExclamationIcon,
-} from "@heroicons/vue/solid";
+    DevicePhoneMobileIcon as DeviceMobileIcon,
+    BanknotesIcon as CashIcon,
+    ExclamationCircleIcon as ExclamationIcon,
+} from "@heroicons/vue/24/solid";
 
 export default {
     name: "PricingPage",
