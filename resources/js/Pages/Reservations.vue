@@ -1,20 +1,6 @@
-<script setup>
-import NavBar from "@/Components/NavBar.vue";
-import FooterSection from "@/Components/FooterSection.vue";
-const form = ref({
-    vehicleType: "",
-    licensePlate: "",
-    entryDateTime: "",
-    exitDateTime: "",
-    zone: "",
-    spotType: "standard",
-    specialRequests: "",
-});
-</script>
 <template>
     <div class="bg-gray-900 min-h-screen">
         <!-- Top Navigation Bar -->
-
         <NavBar />
         <!-- Main Content Area -->
         <div class="max-w-7xl mx-auto px-6 py-8">
@@ -386,7 +372,7 @@ const form = ref({
                                 <div class="flex justify-between">
                                     <span class="text-gray-400">Zone:</span>
                                     <span class="text-white">{{
-                                        selectedZone.zone.name || "Not selected"
+                                        selectedZone.name || "Not selected"
                                     }}</span>
                                 </div>
 
@@ -479,15 +465,27 @@ const form = ref({
             </div>
         </div>
     </div>
+    <!-- Footer Section -->
+    <FooterSection />
 </template>
 
 <script>
 import { ref, computed, watch } from "vue";
-
+import NavBar from "@/Components/NavBar.vue";
+import FooterSection from "@/Components/FooterSection.vue";
 export default {
+    components: { NavBar, FooterSection },
     setup() {
         // Form data
-
+        const form = ref({
+            vehicleType: "",
+            licensePlate: "",
+            entryDateTime: "",
+            exitDateTime: "",
+            zone: "",
+            spotType: "standard",
+            specialRequests: "",
+        });
         // Mock data - replace with API calls in production
         const zones = ref([
             { id: "north", name: "North Zone", availableSpots: 12 },
